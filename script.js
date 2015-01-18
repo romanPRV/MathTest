@@ -40,12 +40,11 @@ function drawChecking() {
     }
 
     function validValue(value) {
-        value = parseFloat(value);
         if (value === '')   return 0;
-        else if (value !== 0) {
+        else if (value !== '0') {
                 if (!(value / value))   return 0;
                 else if (value < 1)    return 0;
-                    else if (!((value ^ 0) === value))    return 0;
+                    else if (!((parseFloat(value) ^ 0) === parseFloat(value)))    return 0;
                         else   return 1;
         }    else  return 0;
     }
